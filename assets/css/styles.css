@@ -366,7 +366,15 @@ img {
 
 /* ===== CERTIFICATIONS =====*/
 .certifications__container {
-  row-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .certifications__card {
@@ -377,6 +385,7 @@ img {
   transition: 0.3s;
   text-align: center;
   padding-bottom: 1rem;
+  width: 100%; /* mobile: 1 card por fila */
 }
 
 .certifications__card:hover {
@@ -556,6 +565,13 @@ img {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
 }
+
+@media screen and (min-width: 768px) {
+  .certifications__card {
+    width: calc(25% - 1.5rem); /* 4 por fila */
+  }
+}
+
 }
 @media screen and (min-width: 992px) {
   .bd-grid {
